@@ -51,6 +51,7 @@ nav a.on{background:var(--honey);color:#2B2118}
 .hero ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:8px}
 .hero li{display:flex;gap:10px;align-items:center;font-weight:600}.hero li svg{width:18px;height:18px;fill:var(--honey);flex:none}
 .hero .cap{position:absolute;right:20px;bottom:100px}
+#calc{scroll-margin-top:100px}
 /* бенто */
 .bento{display:grid;gap:18px;grid-template-columns:1.2fr 1.5fr 1fr 1fr;margin-top:-100px;position:relative;z-index:2}
 .card{border-radius:var(--r);padding:26px;background:var(--paper);border:1px solid var(--line)}
@@ -106,6 +107,40 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 @media(max-width:860px){.bento{grid-template-columns:1fr 1fr;margin-top:-80px}.calc,.split{grid-template-columns:1fr}.tiles,.gal{grid-template-columns:1fr 1fr}.glass{grid-template-columns:1fr}.hero{padding:56px 0 130px}.phero{padding:40px 24px}section{padding:46px 0}.tel{display:none}}
 @media(max-width:540px){.bento,.tiles,.gal,.types{grid-template-columns:1fr}.gal .w{grid-column:auto}.hero .cap{display:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+
+/* ЗОБРАЖЕННЯ САЙТУ: змініть адресу в одному місці, якщо розміщуєте фото на окремому хостингу */
+:root{
+  --img-hero:url("./images/hero.webp");
+  --img-contractor:url("./images/contractor.webp");
+  --img-cosmetic:url("./images/cosmetic.webp");
+  --img-capital:url("./images/capital.webp");
+  --img-designer:url("./images/designer.webp");
+  --img-manager:url("./images/manager.webp");
+  --img-dream-home:url("./images/dream-home.webp");
+}
+/* Головний банер: текст залишається читабельним */
+.hero{
+  background-image:linear-gradient(90deg,rgba(25,21,16,.77) 0%,rgba(25,21,16,.40) 43%,rgba(25,21,16,.08) 100%),var(--img-hero);
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+.hero::before,.hero>svg,.hero>.cap{display:none}
+/* Фотокартки замість декоративних градієнтів */
+.ph.photo{background-repeat:no-repeat;background-size:cover;background-position:center}
+.ph.photo::before,.ph.photo>svg,.ph.photo .cap{display:none}
+.bento .ph.photo-contractor{
+  background-image:linear-gradient(180deg,rgba(31,22,15,.12),rgba(31,22,15,.72)),var(--img-contractor);
+  background-position:center 32%;
+}
+.type .ph.photo-cosmetic{background-image:var(--img-cosmetic)}
+.type .ph.photo-capital{background-image:var(--img-capital)}
+.type .ph.photo-designer{background-image:var(--img-designer)}
+.mgr .ph.photo-manager{background-image:var(--img-manager);background-position:center 20%}
+.ph.imm.photo-dream{
+  background-image:linear-gradient(180deg,rgba(32,22,13,.67),rgba(32,22,13,.22) 47%,rgba(32,22,13,.68)),var(--img-dream-home);
+  background-position:center center;
+}
 </style>
 </head>
 <body>
@@ -140,7 +175,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 
 <div class="wrap">
 <div class="bento">
-<div class="ph g2"><h3>Один підрядник на всі види робіт</h3><span class="cap">Фото: прораб на об’єкті</span></div>
+<div class="ph g2 photo photo-contractor"><h3>Один підрядник на всі види робіт</h3><span class="cap">Фото: прораб на об’єкті</span></div>
 <div class="card dark"><h3>Ключові гарантії в договорі</h3><ul>
 <li><svg class="ico"><use href="#leaf"/></svg>Ціна не зростає без вашої згоди</li>
 <li><svg class="ico"><use href="#leaf"/></svg>Штраф за зрив термінів</li>
@@ -163,13 +198,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 <div class="res"><div>Орієнтовна вартість<strong id="price"></strong></div><a class="btn" href="tel:+380000000000">Отримати точний кошторис</a></div>
 <p class="note">Орієнтовний розрахунок. Остаточну суму визначимо після безкоштовного заміру.</p>
 </div>
-<div class="card mgr"><div class="ph g3"><svg class="ico"><use href="#leaf"/></svg><span class="cap">Фото: менеджерка</span></div>
+<div class="card mgr"><div class="ph g3 photo photo-manager"><svg class="ico"><use href="#leaf"/></svg><span class="cap">Фото: менеджерка</span></div>
 <div><b>Оксана Гнатюк</b><p style="margin:4px 0 0;font-size:.9rem;color:var(--soft)">Допоможу з розрахунком і підберу рішення під ваш бюджет.</p></div></div>
 </div>
 </div></section>
 
 <section><div class="wrap">
-<div class="ph imm g1"><svg class="ico"><use href="#tree"/></svg>
+<div class="ph imm g1 photo photo-dream"><svg class="ico"><use href="#tree"/></svg>
 <div><h2>Втілимо вашу мрію про дім, у якому приємно жити</h2><p>Ремонт — це не лише стіни, а й щоденний комфорт. Працюємо так, щоб результат служив десятиліттями.</p></div>
 <div class="glass">
 <div><h3>Натуральні матеріали</h3><p>Дуб, ясен, природна штукатурка.</p></div>
@@ -267,7 +302,7 @@ return d?'<div>'+t+'<p>'+s[1]+'</p></div>':t}).join("")});
 var G=[["Кухня-вітальня","g2"],["Ванна кімната","g1"],["Спальня","g3"],["Коридор","g4"],["Дитяча","g2"],["Будинок, перший поверх","g1"],["Сходи з дуба","g4"],["Кабінет","g3"],["Балкон","g1"],["Їдальня","g2"]];
 document.getElementById("gal").innerHTML=G.map(function(g,i){return '<div class="ph tile '+g[1]+(i%5==0?' w':'')+'"><span class="cap" style="position:absolute;left:14px;bottom:14px">Фото: '+g[0]+'</span></div>'}).join("");
 
-var T=[["Косметичний",3500,"g3"],["Капітальний",8500,"g2"],["Дизайнерський",14000,"g1"]],cur=1,ar=document.getElementById("area");
+var T=[["Косметичний",3500,"g3 photo photo-cosmetic"],["Капітальний",8500,"g2 photo photo-capital"],["Дизайнерський",14000,"g1 photo photo-designer"]],cur=1,ar=document.getElementById("area");
 var tb=document.getElementById("types");
 function fmt(n){return (Math.round(n/1000)*1000).toLocaleString("uk-UA")}
 function calc(){document.getElementById("areaOut").textContent=ar.value;
