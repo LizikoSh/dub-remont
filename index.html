@@ -226,6 +226,30 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   .service-photo{background-position:center}
 }
 
+
+/* Оновлення 03.11.2026: банери та адаптивне меню */
+.bento .ph.photo-contractor{justify-content:center;align-items:flex-start}
+.bento .ph.photo-contractor h3{margin:0;max-width:20ch;text-wrap:balance}
+/* Сильніше затемнення фото у головному банері для контрастності тексту. */
+.hero{
+  background-image:linear-gradient(90deg,rgba(23,18,14,.91) 0%,rgba(23,18,14,.73) 46%,rgba(23,18,14,.39) 100%),var(--img-hero);
+}
+/* Кнопка навігації відображається лише на планшетах і телефонах. */
+.menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:44px;padding:0;margin:0 0 0 auto;border:1px solid rgba(255,255,255,.35);border-radius:12px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;flex:none}
+.menu-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
+.menu-toggle .icon-close{display:none}
+.menu-toggle[aria-expanded="true"] .icon-menu{display:none}
+.menu-toggle[aria-expanded="true"] .icon-close{display:block}
+@media (max-width:860px){
+  header .wrap{flex-wrap:nowrap;justify-content:space-between;gap:12px;min-height:64px}
+  header .logo{font-size:1.16rem;white-space:nowrap}
+  .menu-toggle{display:flex}
+  header nav#site-nav{display:none;position:absolute;top:calc(100% - 1px);left:20px;right:20px;max-width:none;z-index:20;overflow:visible;flex:none;flex-direction:column;gap:4px;padding:10px;background:#43301F;border:1px solid rgba(255,255,255,.23);border-radius:0 0 18px 18px;box-shadow:0 18px 30px rgba(27,16,8,.27)}
+  header nav#site-nav.open{display:flex}
+  header nav#site-nav a{display:block;padding:11px 14px;border-radius:10px;font-size:1rem;white-space:normal}
+  .hero{background-image:linear-gradient(90deg,rgba(23,18,14,.93) 0%,rgba(23,18,14,.80) 50%,rgba(23,18,14,.62) 100%),var(--img-hero)}
+}
+
 </style>
 </head>
 <body>
@@ -237,7 +261,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 
 <header><div class="wrap">
 <a class="logo" href="#home"><svg class="ico"><use href="#acorn"/></svg>Дуб Ремонт</a>
-<nav aria-label="Основна навігація"><a href="#home">Головна</a><a href="#about">Про нас</a><a href="#services">Послуги</a><a href="#gallery">Галерея</a><a href="#reviews">Відгуки</a><a href="#tips">Поради</a></nav>
+<button class="menu-toggle" id="menu-toggle" type="button" aria-label="Відкрити меню" aria-controls="site-nav" aria-expanded="false">
+<svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+<svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+</button>
+<nav id="site-nav" aria-label="Основна навігація"><a href="#home">Головна</a><a href="#about">Про нас</a><a href="#services">Послуги</a><a href="#gallery">Галерея</a><a href="#reviews">Відгуки</a><a href="#tips">Поради</a></nav>
 <a class="tel" href="tel:+380000000000">+38 (0XX) XXX-XX-XX</a>
 </div></header>
 
@@ -284,7 +312,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 <p class="note">Орієнтовний розрахунок. Остаточну суму визначимо після безкоштовного заміру.</p>
 </div>
 <div class="card mgr"><div class="ph g3 photo photo-manager"><svg class="ico"><use href="#leaf"/></svg><span class="cap">Фото: менеджерка</span></div>
-<div><b>Оксана Гнатюк</b><p style="margin:4px 0 0;font-size:.9rem;color:var(--soft)">Допоможу з розрахунком і підберу рішення під ваш бюджет.</p></div></div>
+<div><b>Менеджерка Оксана</b><p style="margin:4px 0 0;font-size:.9rem;color:var(--soft)">Допоможу з розрахунком і підберу рішення під ваш бюджет.</p></div></div>
 </div>
 </div></section>
 
@@ -378,6 +406,21 @@ ids.forEach(function(i){document.getElementById(i).classList.toggle("on",i===h)}
 document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+h)});
 window.scrollTo(0,0)}
 window.addEventListener("hashchange",show);show();
+
+/* Мобільне бургер-меню: закриття після вибору, ззовні, Escape і при збільшенні екрана. */
+var menuButton=document.getElementById("menu-toggle");
+var menu=document.getElementById("site-nav");
+function closeMenu(){menu.classList.remove("open");menuButton.setAttribute("aria-expanded","false");menuButton.setAttribute("aria-label","Відкрити меню")}
+menuButton.addEventListener("click",function(){
+  var open=!menu.classList.contains("open");
+  menu.classList.toggle("open",open);
+  menuButton.setAttribute("aria-expanded",String(open));
+  menuButton.setAttribute("aria-label",open?"Закрити меню":"Відкрити меню");
+});
+menu.querySelectorAll("a").forEach(function(a){a.addEventListener("click",closeMenu)});
+document.addEventListener("click",function(e){if(!menu.contains(e.target)&&!menuButton.contains(e.target))closeMenu()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"&&menu.classList.contains("open")){closeMenu();menuButton.focus()}});
+window.addEventListener("resize",function(){if(window.innerWidth>860)closeMenu()});
 
 var S=[["Заміри та кошторис","Виїжджаємо безкоштовно, складаємо детальний кошторис.","g3"],["Демонтаж і підготовка","Прибираємо старе покриття, вирівнюємо основу.","g4"],["Чорнові роботи","Стяжка, штукатурка, перегородки.","g2"],["Електрика","Нова проводка, щитки, розетки та освітлення.","g1"],["Сантехніка","Труби, теплі підлоги, встановлення приладів.","g3"],["Стіни та стелі","Фарбування, шпалери, гіпсокартон, натяжні стелі.","g2"],["Підлога","Паркет, ламінат, інженерна дошка, плитка.","g4"],["Столярні роботи","Двері, сходи та меблі з дуба на замовлення.","g2"],["Здача та прибирання","Генеральне прибирання й гарантійний лист.","g1"]];
 document.querySelectorAll("[data-tiles]").forEach(function(c){var d=c.dataset.tiles==="d";
