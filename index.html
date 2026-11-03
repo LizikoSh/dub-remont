@@ -121,12 +121,15 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 /* ГОЛОВНИЙ БАНЕР — затемнення для ПК.
    Останнє число в rgba: 0 = прозоро, 1 = суцільна темрява.
    Найсильніше затемнення зліва, де розміщений білий текст. */
-.hero{
-  background-image:linear-gradient(90deg,
-    rgba(25,21,16,.88) 0%,
-    rgba(25,21,16,.77) 46%,
-    rgba(25,21,16,.55) 100%
-  ),var(--img-hero);
+
+.hero {
+  background-image: linear-gradient(
+    90deg,
+    rgba(23,18,14,0.75) 0%,
+    rgba(23,18,14,0.40) 46%,
+    rgba(23,18,14,0.15) 100%
+  ), var(--img-hero);
+  
   background-position:center center;
   background-size:cover;
   background-repeat:no-repeat;
