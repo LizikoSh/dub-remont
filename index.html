@@ -263,6 +263,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   ),var(--img-hero)}
 }
 
+/* Заголовок герой-банера на мобільних */
+@media (max-width: 540px) {
+  .hero h1 {
+    font-size: clamp(2.15rem, 9vw, 2.7rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    max-width: none;
+    font-weight: 800;
+  }
+
+  .hero-title-row {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
+  
 </style>
 </head>
 <body>
