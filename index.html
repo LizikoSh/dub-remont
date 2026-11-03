@@ -350,8 +350,11 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 .gallery-lightbox .lb-caption{position:absolute;bottom:20px;left:12px;right:12px;text-align:center;color:#fff;font-size:.9rem;margin:0}
 body.lightbox-open{overflow:hidden}
 @media(max-width:540px){.gallery-lightbox{padding:65px 12px 78px}.gallery-lightbox .lb-prev{left:8px}.gallery-lightbox .lb-next{right:8px}.gallery-lightbox .lb-prev,.gallery-lightbox .lb-next{top:auto;bottom:14px;transform:none}.gallery-lightbox .lb-caption{bottom:27px;left:60px;right:60px}}
+
+/* Логотип у шапці та футері */
+.logo img{width:38px;height:38px;display:block;object-fit:contain;flex-shrink:0}
+@media(max-width:860px){header .logo img{width:35px;height:35px}}
 </style>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -361,7 +364,7 @@ body.lightbox-open{overflow:hidden}
 </svg>
 
 <header><div class="wrap">
-<a class="logo" href="#home"><svg class="ico"><use href="#acorn"/></svg>Дуб Ремонт</a>
+<a class="logo" href="#home"><img src="./images/dub-remont-ready.svg" alt="" width="38" height="38">Дуб Ремонт</a>
 <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Відкрити меню" aria-controls="site-nav" aria-expanded="false">
 <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
 <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
@@ -475,8 +478,8 @@ body.lightbox-open{overflow:hidden}
 </div></div>
 
 <div class="page" id="gallery"><div class="wrap">
-<section style="padding-bottom:20px"><div class="ph phero g2 photo-new gallery-heading-photo"><svg class="ico"><use href="#leaf"/></svg><div><h1>Галерея робіт</h1><p>Приклади оформлення житлових просторів.</p></div></div></section>
-<section style="padding-top:20px"><p class="gallery-disclaimer"> </p><div class="gal" id="gal"></div></section>
+<section style="padding-bottom:20px"><div class="ph phero g2 photo-new gallery-heading-photo"><svg class="ico"><use href="#leaf"/></svg><div><h1>Галерея робіт</h1><p>Приклади оформлення житлових просторів. Демонстраційні зображення для оформлення макета.</p></div></div></section>
+<section style="padding-top:20px"><p class="gallery-disclaimer">Це демонстраційні ілюстрації інтер’єрів, не фото виконаних компанією робіт. Для справжнього портфоліо замініть їх власними фотографіями.</p><div class="gal" id="gal"></div></section>
 </div></div>
 
 <div class="page" id="reviews"><div class="wrap">
@@ -498,10 +501,9 @@ body.lightbox-open{overflow:hidden}
 </main>
 
 <footer><div class="wrap">
-<div><a class="logo" href="#home"><svg class="ico"><use href="#acorn"/></svg>Дуб Ремонт</a><p style="margin-top:8px">Ремонт на роки.</p></div>
-<div><p>+38 (0XX) XXX-XX-XX</p><p>poshta@tararam.ua</p></div>
+<div><a class="logo" href="#home"><img src="./images/dub-remont-ready.svg" alt="" width="38" height="38">Дуб Ремонт</a><p style="margin-top:8px">Ремонт, який стоїть міцно.</p></div>
+<div><p>+38 (0XX) XXX-XX-XX</p><p>hello@dub-remont.ua</p></div>
 <div><p>м.Місто, вул.Вулична</p><p>Пн–Сб, 9:00–18:00</p></div>
-<div><p>Це демонстраційний сайт. Використані фото належать їхнім авторам, а не авторці сайту.</p></div>
 </div></footer>
 
 <div class="gallery-lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Перегляд фотографій" aria-hidden="true">
