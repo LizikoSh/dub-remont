@@ -354,6 +354,34 @@ body.lightbox-open{overflow:hidden}
 /* Логотип у шапці та футері */
 .logo img{width:46px;height:46px;display:block;object-fit:contain;flex-shrink:0}
 @media(max-width:860px){header .logo img{width:42px;height:42px}}
+
+
+/* Оновлення портфоліо: бейдж Demo, преміальні стани і опис проєкту */
+:root{--chocolate:#352417;--chocolate-deep:#2A1B12;--graphite:#2B2118}
+body{color:var(--graphite)}
+header .wrap{align-items:center}
+.demo-badge{display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;border-radius:999px;background:rgba(215,173,112,.14);border:1px solid rgba(215,173,112,.48);color:#F5EBDC;font:700 .76rem/1 Montserrat,system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 8px 18px rgba(17,10,5,.12)}
+.btn,nav a,.type,.tiles .tile{transition:background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s ease,filter .25s ease}
+.btn:hover,.btn:focus-visible{background:var(--chocolate);border-color:var(--chocolate);color:#F5EBDC;transform:translateY(-2px);box-shadow:0 14px 28px rgba(43,33,24,.22)}
+.btn:active{background:var(--chocolate-deep);border-color:var(--chocolate-deep);color:#F5EBDC;transform:translateY(0);box-shadow:0 8px 16px rgba(43,33,24,.2)}
+.btn.g:hover,.btn.g:focus-visible,.btn.o:hover,.btn.o:focus-visible{background:var(--chocolate);border-color:var(--chocolate);color:#F5EBDC}
+.btn.g:active,.btn.o:active{background:var(--chocolate-deep);border-color:var(--chocolate-deep);color:#F5EBDC}
+nav a:hover,nav a:focus-visible{background:rgba(53,36,23,.88);color:#F5EBDC}
+nav a:active{background:var(--chocolate-deep);color:#F5EBDC;transform:translateY(1px)}
+nav a.on{box-shadow:0 8px 18px rgba(43,33,24,.15)}
+.type:hover,.type:focus-visible{border-color:var(--chocolate);box-shadow:0 14px 28px rgba(43,33,24,.18);transform:translateY(-4px)}
+.type:active{transform:translateY(-1px);box-shadow:0 8px 16px rgba(43,33,24,.16)}
+.tiles .tile{cursor:default}
+.tiles .tile:hover,.tiles .tile:focus-visible{transform:translateY(-4px);box-shadow:0 16px 28px rgba(43,33,24,.22);filter:saturate(1.03)}
+.tiles .tile:active{transform:translateY(-1px);box-shadow:0 10px 18px rgba(43,33,24,.18)}
+.portfolio-note-wrap{padding-top:34px}
+.portfolio-note{max-width:940px;margin:0 auto;border-radius:28px;padding:26px 28px;background:linear-gradient(180deg,#FFFDF8,#F7F0E4);border:1px solid var(--line);box-shadow:0 18px 34px rgba(43,33,24,.08)}
+.portfolio-note h2{text-align:left;font-size:clamp(1.2rem,2vw,1.6rem);margin:0 0 10px}
+.portfolio-note p{margin:0;color:var(--graphite)}
+.portfolio-note strong{color:var(--chocolate)}
+@media (max-width:860px){.demo-badge{margin-left:6px;padding:5px 9px;font-size:.72rem}.portfolio-note{padding:22px}}
+@media (max-width:540px){.demo-badge{display:none}.portfolio-note-wrap{padding-top:24px}}
+
 </style>
 </head>
 <body>
@@ -364,7 +392,7 @@ body.lightbox-open{overflow:hidden}
 </svg>
 
 <header><div class="wrap">
-<a class="logo" href="#home"><img src="./images/logo-dub-remont-2-200-200.png" alt="" width="46" height="46">Дуб Ремонт</a>
+<a class="logo" href="#home"><img src="./images/logo-dub-remont-2-200-200.png" alt="" width="46" height="46">Дуб Ремонт</a><span class="demo-badge" aria-label="Демонстраційна версія">Demo</span>
 <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Відкрити меню" aria-controls="site-nav" aria-expanded="false">
 <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
 <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
@@ -446,6 +474,8 @@ body.lightbox-open{overflow:hidden}
 </div></section>
 
 <div class="wrap"><div class="cta"><h2 style="color:#FFF">Розкажіть, що хочете змінити</h2><p>Приїдемо на замір безкоштовно та підготуємо кошторис протягом доби.</p><a class="btn" href="tel:+380000000000">Зателефонувати</a><a class="btn g" href="#tips">Прочитати поради</a></div></div>
+
+<section class="portfolio-note-wrap"><div class="wrap"><div class="portfolio-note"><h2>Опис проєкту для портфоліо</h2><p><strong>Дуб Ремонт</strong> — демонстраційний концепт промосайту ремонтної компанії з преміальною подачею, зручним калькулятором, адаптивним інтерфейсом, галереєю робіт та продуманою візуальною системою для подальшої презентації в портфоліо вебдизайнера або розробника.</p></div></div></section>
 </div>
 
 <div class="page" id="about"><div class="wrap">
@@ -539,7 +569,7 @@ window.addEventListener("resize",function(){if(window.innerWidth>860)closeMenu()
 
 var S=[["Заміри та кошторис","Виїжджаємо безкоштовно, складаємо детальний кошторис.","g3"],["Демонтаж і підготовка","Прибираємо старе покриття, вирівнюємо основу.","g4"],["Чорнові роботи","Стяжка, штукатурка, перегородки.","g2"],["Електрика","Нова проводка, щитки, розетки та освітлення.","g1"],["Сантехніка","Труби, теплі підлоги, встановлення приладів.","g3"],["Стіни та стелі","Фарбування, шпалери, гіпсокартон, натяжні стелі.","g2"],["Підлога","Паркет, ламінат, інженерна дошка, плитка.","g4"],["Столярні роботи","Двері, сходи та меблі з дуба на замовлення.","g2"],["Здача та прибирання","Генеральне прибирання й гарантійний лист.","g1"]];
 document.querySelectorAll("[data-tiles]").forEach(function(c){var d=c.dataset.tiles==="d";
-c.innerHTML=S.map(function(s,i){var t='<div class="ph tile photo-new service-photo service-'+(i+1)+' '+s[2]+'"><b class="n">0'+(i+1)+'</b><h3>'+s[0]+'</h3></div>';
+c.innerHTML=S.map(function(s,i){var t='<div tabindex="0" class="ph tile photo-new service-photo service-'+(i+1)+' '+s[2]+'"><b class="n">0'+(i+1)+'</b><h3>'+s[0]+'</h3></div>';
 return d?'<div>'+t+'<p>'+s[1]+'</p></div>':t}).join("")});
 
 var G=[["Кухня-вітальня","g2"],["Ванна кімната","g1"],["Спальня","g3"],["Коридор","g4"],["Дитяча","g2"],["Будинок, перший поверх","g1"],["Сходи з дуба","g4"],["Кабінет","g3"],["Балкон","g1"],["Їдальня","g2"]];
