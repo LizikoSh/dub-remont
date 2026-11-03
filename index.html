@@ -15,7 +15,8 @@ color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-to
 :root[data-theme="dark"]{--bg:#251C14;--paper:#33271C;--ink:#F3E8D4;--soft:#CDBBA2;--line:#4F3F2D}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:500 16px/1.6 Montserrat,system-ui,sans-serif}
+body{margin:0;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font:500 16px/1.6 Montserrat,system-ui,sans-serif}
+main{flex:1 0 auto}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bark);z-index:10}
 h1,h2,h3{font-weight:700;line-height:1.18;margin:0 0 .5em;letter-spacing:-.01em}
 h1{font-size:clamp(2rem,4.8vw,3.4rem)}h2{font-size:clamp(1.6rem,3.2vw,2.3rem);text-align:center}h3{font-size:1.1rem}
@@ -68,7 +69,7 @@ nav a.on{background:var(--honey);color:#2B2118}
 .type .ph{height:92px;border-radius:0}.type div.t{padding:10px 14px}.type b{display:block}.type small{color:var(--soft)}
 .type[aria-pressed="true"]{border-color:var(--honeyD);box-shadow:0 0 0 3px rgba(235,169,60,.4)}
 input[type=range]{width:100%;accent-color:var(--honeyD);margin:6px 0 4px}
-.res{background:var(--woodL),var(--bark);color:#F3E8D4;border-radius:22px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
+.res{background:linear-gradient(90deg,#352417 0%,#43301F 18%,#43301F 82%,#352417 100%);color:#F3E8D4;border-radius:22px;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px}
 .res strong{display:block;font-size:1.7rem;color:var(--honey)}.res .btn{margin:0}
 .mgr{padding:0;display:flex;flex-direction:column;min-height:100%}.mgr .ph{flex:1;min-height:260px;padding:16px;border-radius:32px 32px 0 0}.mgr div{padding:20px}
 .note{font-size:.8rem;color:var(--soft);margin:14px 0 0}
@@ -100,9 +101,20 @@ input[type=range]{width:100%;accent-color:var(--honeyD);margin:6px 0 4px}
 details{border-bottom:1px solid var(--line);padding:16px 0;max-width:780px}
 summary{cursor:pointer;font-weight:700;font-size:1.1rem}summary::marker{color:var(--honeyD)}
 details p{margin:10px 0 0;color:var(--soft)}
-.cta{border-radius:34px;text-align:center;padding:52px 24px;background:var(--woodL),var(--forest);color:#FFF}
+/* Фон блоку «Розкажіть, що хочете змінити» — файл images/cta-consultation.webp */
+.cta{
+  border-radius:34px;
+  text-align:center;
+  padding:52px 24px;
+  background-image:linear-gradient(90deg,rgba(20,35,22,.76) 0%,rgba(20,35,22,.55) 50%,rgba(20,35,22,.76) 100%),url("./images/cta-consultation.webp");
+  background-color:#35523A;
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:#FFF;
+}
 .cta p{max-width:46ch;margin:0 auto 20px;opacity:.92}
-footer{background:linear-gradient(90deg,#352417 0%,#43301F 18%,#43301F 82%,#352417 100%);color:#F3E8D4;padding:44px 0 34px;font-size:.93rem;margin-top:30px}
+footer{flex-shrink:0;background:linear-gradient(90deg,#352417 0%,#43301F 18%,#43301F 82%,#352417 100%);color:#F3E8D4;padding:44px 0 34px;font-size:.93rem;margin-top:30px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-between}footer p{margin:0 0 .3em}
 @media(max-width:860px){.bento{grid-template-columns:1fr 1fr;margin-top:-80px}.calc,.split{grid-template-columns:1fr}.tiles,.gal{grid-template-columns:1fr 1fr}.glass{grid-template-columns:1fr}.hero{padding:56px 0 130px}.phero{padding:40px 24px}section{padding:46px 0}.tel{display:none}}
 @media(max-width:540px){.bento,.tiles,.gal,.types{grid-template-columns:1fr}.gal .w{grid-column:auto}.hero .cap{display:none}}
