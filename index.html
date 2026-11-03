@@ -28,7 +28,7 @@ header{background:var(--woodL),var(--bark);position:sticky;top:env(safe-area-ins
 header .wrap{display:flex;align-items:center;gap:14px 22px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.3rem;text-decoration:none;color:#FFF}
 .logo svg{width:30px;height:30px;color:var(--honey)}
-nav{display:flex;gap:2px;overflow-x:auto;flex:1;max-width:100%}
+nav{display:flex;gap:2px;overflow-x:auto;flex:1;max-width:100%;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
 nav a{padding:8px 13px;text-decoration:none;font-weight:600;font-size:.92rem;border-radius:12px;white-space:nowrap}
 nav a.on{background:var(--honey);color:#2B2118}
 .tel{font-weight:700;text-decoration:none;white-space:nowrap}
@@ -141,6 +141,91 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   background-image:linear-gradient(180deg,rgba(32,22,13,.67),rgba(32,22,13,.22) 47%,rgba(32,22,13,.68)),var(--img-dream-home);
   background-position:center center;
 }
+
+/* ─── НОВІ ФОТО: послуги, галерея, команда, інші сторінки ───
+   Усі 31 фото підключено локально з ./images/.
+   Файли з папки images мають бути завантажені до репозиторію разом з index.html.
+*/
+:root{
+  --stock-01-measure:url("./images/service-01-measure.webp");
+  --stock-02-demolition:url("./images/service-02-demolition.webp");
+  --stock-03-drywall:url("./images/service-03-drywall.webp");
+  --stock-04-electrical:url("./images/service-04-electrical.webp");
+  --stock-05-plumbing:url("./images/service-05-plumbing.webp");
+  --stock-06-walls:url("./images/service-06-walls.webp");
+  --stock-07-flooring:url("./images/service-07-flooring.webp");
+  --stock-08-woodwork:url("./images/service-08-woodwork.webp");
+  --stock-09-cleaning:url("./images/service-09-cleaning.webp");
+  --stock-01-kitchen-living:url("./images/gallery-01-kitchen-living.webp");
+  --stock-02-bathroom:url("./images/gallery-02-bathroom.webp");
+  --stock-03-bedroom:url("./images/gallery-03-bedroom.webp");
+  --stock-04-hallway:url("./images/gallery-04-hallway.webp");
+  --stock-05-kids-room:url("./images/gallery-05-kids-room.webp");
+  --stock-06-first-floor:url("./images/gallery-06-first-floor.webp");
+  --stock-07-oak-stairs:url("./images/gallery-07-oak-stairs.webp");
+  --stock-08-home-office:url("./images/gallery-08-home-office.webp");
+  --stock-09-balcony:url("./images/gallery-09-balcony.webp");
+  --stock-10-dining:url("./images/gallery-10-dining.webp");
+  --stock-team-work:url("./images/illustration-team-work.webp");
+  --stock-owner:url("./images/illustration-owner.webp");
+  --stock-designer-person:url("./images/illustration-designer-person.webp");
+  --stock-craftsman:url("./images/illustration-craftsman.webp");
+  --stock-interior-prep:url("./images/illustration-interior-prep.webp");
+}
+
+/* Для зображень з текстом накладено м’який затемнювальний градієнт. */
+.ph.photo-new{background-repeat:no-repeat;background-size:cover;background-position:center}
+.ph.photo-new::before,.ph.photo-new>svg,.ph.photo-new>.cap{display:none}
+.service-photo{background-position:center 43%}
+.gallery-photo{background-position:center 48%}
+.gallery-photo>.cap{display:block!important} /* підписи під фотографіями галереї */
+
+.service-1{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-01-measure);}
+.service-2{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-02-demolition);}
+.service-3{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-03-drywall);}
+.service-4{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-04-electrical);}
+.service-5{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-05-plumbing);}
+.service-6{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-06-walls);}
+.service-7{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-07-flooring);}
+.service-8{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-08-woodwork);}
+.service-9{background-image:linear-gradient(180deg,rgba(22,18,13,.02) 18%,rgba(22,18,13,.82) 100%),var(--stock-09-cleaning);}
+.gallery-1{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-01-kitchen-living);}
+.gallery-2{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-02-bathroom);}
+.gallery-3{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-03-bedroom);}
+.gallery-4{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-04-hallway);}
+.gallery-5{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-05-kids-room);}
+.gallery-6{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-06-first-floor);}
+.gallery-7{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-07-oak-stairs);}
+.gallery-8{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-08-home-office);}
+.gallery-9{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-09-balcony);}
+.gallery-10{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-10-dining);}
+
+/* Внутрішні банери та фото команди */
+.about-work-photo{background-image:var(--stock-team-work);background-size:cover;background-position:center}
+.about-work-photo::before,.about-work-photo>svg{display:none}
+.about-heading-photo{background-image:linear-gradient(90deg,rgba(28,24,19,.75),rgba(28,24,19,.40)),var(--stock-team-work)}
+.services-heading-photo{background-image:linear-gradient(90deg,rgba(28,24,19,.80),rgba(28,24,19,.42)),var(--stock-03-drywall)}
+.gallery-heading-photo{background-image:linear-gradient(90deg,rgba(28,24,19,.78),rgba(28,24,19,.32)),var(--stock-01-kitchen-living)}
+.reviews-heading-photo{background-image:linear-gradient(90deg,rgba(28,24,19,.79),rgba(28,24,19,.34)),var(--img-dream-home)}
+.tips-heading-photo{background-image:linear-gradient(90deg,rgba(28,24,19,.78),rgba(28,24,19,.40)),var(--stock-interior-prep)}
+.phero.photo-new{background-position:center;background-size:cover;background-repeat:no-repeat}
+.phero.photo-new::before,.phero.photo-new>svg{display:none}
+.team .member-owner{background-image:var(--stock-owner)}
+.team .member-designer{background-image:var(--stock-designer-person)}
+.team .member-craftsman{background-image:var(--stock-craftsman)}
+.team .member-manager{background-image:var(--img-manager)}
+.team .ph.photo-new{background-size:cover;background-position:center 30%}
+.team .ph.photo-new::before{display:none}
+.team-disclaimer{color:var(--soft);font-size:.8rem;text-align:center;max-width:62ch;margin:16px auto 0}
+.gallery-disclaimer{font-size:.9rem;color:var(--soft);margin:6px auto 18px;text-align:center}
+
+
+/* Невеликі екрани: зберігаємо читабельність написів на фото. */
+@media (max-width:540px){
+  .gallery-photo{min-height:230px}
+  .service-photo{background-position:center}
+}
+
 </style>
 </head>
 <body>
@@ -182,7 +267,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 <li><svg class="ico"><use href="#leaf"/></svg>Оплата поетапно, після прийняття робіт</li>
 <li><svg class="ico"><use href="#leaf"/></svg>Гарантійний лист на 2 роки</li></ul></div>
 <div class="card honey"><div class="num">10</div><b>років на ринку ремонту</b></div>
-<div class="card green"><div class="num">300+</div><b>здалих об’єктів</b></div>
+<div class="card green"><div class="num">300+</div><b>зданих об’єктів</b></div>
 </div>
 </div>
 
@@ -228,10 +313,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 </div>
 
 <div class="page" id="about"><div class="wrap">
-<section style="padding-bottom:20px"><div class="ph phero g4"><svg class="ico"><use href="#acorn"/></svg><div><h1>Про фірму</h1><p>Надійно, як дуб: так ми працюємо вже понад десять років.</p></div></div></section>
+<section style="padding-bottom:20px"><div class="ph phero g4 photo-new about-heading-photo"><svg class="ico"><use href="#acorn"/></svg><div><h1>Про фірму</h1><p>Надійно, як дуб: так ми працюємо вже понад десять років.</p></div></div></section>
 <section style="padding-top:20px"><div class="split">
 <div><h2 style="text-align:left">Наша історія</h2><p>«Дуб Ремонт» почався у 2014 році з двох майстрів і однієї вантажівки інструментів. Перший об’єкт був невеликою квартирою для знайомих, і після нього замовлення почали приходити за рекомендаціями.</p><p>Назву обрали невипадково: дуб означає надійність і довговічність. Ми не поспішаємо там, де важлива якість, і чесно говоримо про все, що впливає на ціну та строки.</p></div>
-<div class="ph g2" style="min-height:340px"><svg class="ico"><use href="#acorn"/></svg><span class="cap">Фото: команда на об’єкті</span></div></div></section>
+<div class="ph g2 photo-new about-work-photo" style="min-height:340px"><svg class="ico"><use href="#acorn"/></svg><span class="cap">Ілюстративне фото майстра</span></div></div></section>
 <section style="padding-top:0"><h2>Наші принципи</h2><br>
 <div class="grid">
 <div class="card"><svg class="ico"><use href="#leaf"/></svg><h3>Чесний кошторис</h3><p>Ціна в договорі не змінюється без вашої згоди.</p></div>
@@ -239,14 +324,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 <div class="card"><svg class="ico"><use href="#tree"/></svg><h3>Порядок на об’єкті</h3><p>Щодня прибираємо робоче місце, а в кінці здаємо чистий дім.</p></div></div></section>
 <section style="padding-top:0"><h2>Колектив</h2><br>
 <div class="grid team">
-<div><div class="ph g4"></div><h3>Олег Дубенко</h3><p>Засновник, головний майстер</p></div>
-<div><div class="ph g1"></div><h3>Марина Ковальчук</h3><p>Дизайнерка інтер’єрів</p></div>
-<div><div class="ph g2"></div><h3>Іван Мельник</h3><p>Майстер з оздоблення</p></div>
-<div><div class="ph g3"></div><h3>Оксана Гнатюк</h3><p>Менеджерка проєктів</p></div></div></section>
+<div><div class="ph g4 photo-new member-owner"></div><h3>Олег Дубенко</h3><p>Засновник, головний майстер</p></div>
+<div><div class="ph g1 photo-new member-designer"></div><h3>Марина Ковальчук</h3><p>Дизайнерка інтер’єрів</p></div>
+<div><div class="ph g2 photo-new member-craftsman"></div><h3>Іван Мельник</h3><p>Майстер з оздоблення</p></div>
+<div><div class="ph g3 photo-new member-manager"></div><h3>Оксана Гнатюк</h3><p>Менеджерка проєктів</p></div></div><p class="team-disclaimer">Імена та портрети в цьому макеті — демонстраційні. Перед запуском замініть їх фотографіями реальних працівників.</p></section>
 </div></div>
 
 <div class="page" id="services"><div class="wrap">
-<section style="padding-bottom:20px"><div class="ph phero g1"><svg class="ico"><use href="#tree"/></svg><div><h1>Послуги</h1><p>Повний комплекс ремонтних робіт у вашому домі.</p></div></div></section>
+<section style="padding-bottom:20px"><div class="ph phero g1 photo-new services-heading-photo"><svg class="ico"><use href="#tree"/></svg><div><h1>Послуги</h1><p>Повний комплекс ремонтних робіт у вашому домі.</p></div></div></section>
 <section style="padding-top:20px"><div class="tiles d" data-tiles="d"></div></section>
 <section style="padding-top:0"><h2>Як ми працюємо</h2><br>
 <ol class="steps">
@@ -257,12 +342,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 </div></div>
 
 <div class="page" id="gallery"><div class="wrap">
-<section style="padding-bottom:20px"><div class="ph phero g2"><svg class="ico"><use href="#leaf"/></svg><div><h1>Галерея робіт</h1><p>Реальні об’єкти нашої команди: до, під час і після.</p></div></div></section>
-<section style="padding-top:20px"><div class="gal" id="gal"></div></section>
+<section style="padding-bottom:20px"><div class="ph phero g2 photo-new gallery-heading-photo"><svg class="ico"><use href="#leaf"/></svg><div><h1>Галерея робіт</h1><p>Приклади оформлення житлових просторів. Демонстраційні зображення для оформлення макета.</p></div></div></section>
+<section style="padding-top:20px"><p class="gallery-disclaimer">Це демонстраційні ілюстрації інтер’єрів, не фото виконаних компанією робіт. Для справжнього портфоліо замініть їх власними фотографіями.</p><div class="gal" id="gal"></div></section>
 </div></div>
 
 <div class="page" id="reviews"><div class="wrap">
-<section style="padding-bottom:20px"><div class="ph phero g3"><svg class="ico"><use href="#acorn"/></svg><div><h1>Відгуки клієнтів</h1><p>Що кажуть люди, які вже живуть у відремонтованих домівках.</p></div></div></section>
+<section style="padding-bottom:20px"><div class="ph phero g3 photo-new reviews-heading-photo"><svg class="ico"><use href="#acorn"/></svg><div><h1>Відгуки клієнтів</h1><p>Що кажуть люди, які вже живуть у відремонтованих домівках.</p></div></div></section>
 <section style="padding-top:20px"><div class="grid">
 <div class="card"><p class="q">«Кожен етап ми бачили на фото. Жодних неприємних сюрпризів у кошторисі.»</p><p class="who">Андрій Л., двокімнатна квартира</p></div>
 <div class="card"><p class="q">«Столярні роботи чудові: двері й підвіконня виглядають так, ніби були тут завжди.»</p><p class="who">Наталія Т., приватний будинок</p></div>
@@ -270,7 +355,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 </div></div>
 
 <div class="page" id="tips"><div class="wrap">
-<section style="padding-bottom:20px"><div class="ph phero g4"><svg class="ico"><use href="#leaf"/></svg><div><h1>Корисна інформація</h1><p>Короткі відповіді на питання, які ставлять перед ремонтом.</p></div></div></section>
+<section style="padding-bottom:20px"><div class="ph phero g4 photo-new tips-heading-photo"><svg class="ico"><use href="#leaf"/></svg><div><h1>Корисна інформація</h1><p>Короткі відповіді на питання, які ставлять перед ремонтом.</p></div></div></section>
 <section style="padding-top:20px">
 <details open><summary>З чого почати ремонт</summary><p>Визначте бюджет із запасом 10–15%, складіть список приміщень за пріоритетом і попросіть кошторис з окремими розділами для робіт і матеріалів.</p></details>
 <details><summary>Скільки триває ремонт квартири</summary><p>Косметичний ремонт займає кілька тижнів, капітальний зазвичай від двох до чотирьох місяців. Точний строк залежить від площі, інженерних робіт і доставки матеріалів.</p></details>
@@ -296,11 +381,11 @@ window.addEventListener("hashchange",show);show();
 
 var S=[["Заміри та кошторис","Виїжджаємо безкоштовно, складаємо детальний кошторис.","g3"],["Демонтаж і підготовка","Прибираємо старе покриття, вирівнюємо основу.","g4"],["Чорнові роботи","Стяжка, штукатурка, перегородки.","g2"],["Електрика","Нова проводка, щитки, розетки та освітлення.","g1"],["Сантехніка","Труби, теплі підлоги, встановлення приладів.","g3"],["Стіни та стелі","Фарбування, шпалери, гіпсокартон, натяжні стелі.","g2"],["Підлога","Паркет, ламінат, інженерна дошка, плитка.","g4"],["Столярні роботи","Двері, сходи та меблі з дуба на замовлення.","g2"],["Здача та прибирання","Генеральне прибирання й гарантійний лист.","g1"]];
 document.querySelectorAll("[data-tiles]").forEach(function(c){var d=c.dataset.tiles==="d";
-c.innerHTML=S.map(function(s,i){var t='<div class="ph tile '+s[2]+'"><b class="n">0'+(i+1)+'</b><h3>'+s[0]+'</h3></div>';
+c.innerHTML=S.map(function(s,i){var t='<div class="ph tile photo-new service-photo service-'+(i+1)+' '+s[2]+'"><b class="n">0'+(i+1)+'</b><h3>'+s[0]+'</h3></div>';
 return d?'<div>'+t+'<p>'+s[1]+'</p></div>':t}).join("")});
 
 var G=[["Кухня-вітальня","g2"],["Ванна кімната","g1"],["Спальня","g3"],["Коридор","g4"],["Дитяча","g2"],["Будинок, перший поверх","g1"],["Сходи з дуба","g4"],["Кабінет","g3"],["Балкон","g1"],["Їдальня","g2"]];
-document.getElementById("gal").innerHTML=G.map(function(g,i){return '<div class="ph tile '+g[1]+(i%5==0?' w':'')+'"><span class="cap" style="position:absolute;left:14px;bottom:14px">Фото: '+g[0]+'</span></div>'}).join("");
+document.getElementById("gal").innerHTML=G.map(function(g,i){return '<div role="img" aria-label="Ілюстративне фото: '+g[0]+'" class="ph tile photo-new gallery-photo gallery-'+(i+1)+' '+g[1]+(i%5==0?' w':'')+'"><span class="cap" style="position:absolute;left:14px;bottom:14px">'+g[0]+'</span></div>'}).join("");
 
 var T=[["Косметичний",3500,"g3 photo photo-cosmetic"],["Капітальний",8500,"g2 photo photo-capital"],["Дизайнерський",14000,"g1 photo photo-designer"]],cur=1,ar=document.getElementById("area");
 var tb=document.getElementById("types");
