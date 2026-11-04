@@ -101,7 +101,7 @@ input[type=range]{width:100%;accent-color:var(--honeyD);margin:6px 0 4px}
 details{border-bottom:1px solid var(--line);padding:16px 0;max-width:780px}
 summary{cursor:pointer;font-weight:700;font-size:1.1rem}summary::marker{color:var(--honeyD)}
 details p{margin:10px 0 0;color:var(--soft)}
-/* Фон блоку «Розкажіть, що хочете змінити» — файл images/cta-consultation.webp */
+/* Фон блоку "Розкажіть, що хочете змінити" — файл images/cta-consultation.webp */
 .cta{
   border-radius:34px;
   text-align:center;
@@ -120,7 +120,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 @media(max-width:540px){.bento,.tiles,.gal,.types{grid-template-columns:1fr}.gal .w{grid-column:auto}.hero .cap{display:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
-/* ЗОБРАЖЕННЯ САЙТУ: змініть адресу в одному місці, якщо розміщуєте фото на окремому хостингу */
+/* ЗОБРАЖЕННЯ САЙТУ: */
 :root{
   --img-hero:url("./images/hero.webp");
   --img-contractor:url("./images/contractor.webp");
@@ -130,9 +130,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   --img-manager:url("./images/manager.webp");
   --img-dream-home:url("./images/dream-home.webp");
 }
-/* ГОЛОВНИЙ БАНЕР — затемнення для ПК.
-   Останнє число в rgba: 0 = прозоро, 1 = суцільна темрява.
-   Найсильніше затемнення зліва, де розміщений білий текст. */
+/* ГОЛОВНИЙ БАНЕР — затемнення для ПК.*/
 
 .hero {
   background-image: linear-gradient(
@@ -146,10 +144,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   background-size:cover;
   background-repeat:no-repeat;
 }
-/* Ледь помітна тінь під білим текстом покращує читабельність на світлих ділянках фото. */
+
 .hero h1,.hero p,.hero li{text-shadow:0 2px 7px rgba(0,0,0,.35)}
 .hero::before,.hero>svg,.hero>.cap{display:none}
-/* Фотокартки замість декоративних градієнтів */
+
 .ph.photo{background-repeat:no-repeat;background-size:cover;background-position:center}
 .ph.photo::before,.ph.photo>svg,.ph.photo .cap{display:none}
 .bento .ph.photo-contractor{
@@ -165,10 +163,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   background-position:center center;
 }
 
-/* ─── НОВІ ФОТО: послуги, галерея, команда, інші сторінки ───
-   Усі 31 фото підключено локально з ./images/.
-   Файли з папки images мають бути завантажені до репозиторію разом з index.html.
-*/
+
 :root{
   --stock-01-measure:url("./images/service-01-measure.webp");
   --stock-02-demolition:url("./images/service-02-demolition.webp");
@@ -196,7 +191,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   --stock-interior-prep:url("./images/illustration-interior-prep.webp");
 }
 
-/* Для зображень з текстом накладено м’який затемнювальний градієнт. */
+
 .ph.photo-new{background-repeat:no-repeat;background-size:cover;background-position:center}
 .ph.photo-new::before,.ph.photo-new>svg,.ph.photo-new>.cap{display:none}
 .service-photo{background-position:center 43%}
@@ -223,7 +218,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 .gallery-9{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-09-balcony);}
 .gallery-10{background-image:linear-gradient(180deg,rgba(22,18,13,.05),rgba(22,18,13,.26)),var(--stock-10-dining);}
 
-/* Внутрішні банери та фото команди */
+
 .about-work-photo{background-image:var(--stock-team-work);background-size:cover;background-position:center}
 .about-work-photo::before,.about-work-photo>svg{display:none}
 .about-heading-photo{background-image:linear-gradient(90deg,rgba(28,24,19,.75),rgba(28,24,19,.40)),var(--stock-team-work)}
@@ -243,18 +238,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 .gallery-disclaimer{font-size:.9rem;color:var(--soft);margin:6px auto 18px;text-align:center}
 
 
-/* Невеликі екрани: зберігаємо читабельність написів на фото. */
 @media (max-width:540px){
   .gallery-photo{min-height:230px}
   .service-photo{background-position:center}
 }
 
-
-/* Оновлення 03.11.2026: банери та адаптивне меню */
 .bento .ph.photo-contractor{justify-content:center;align-items:flex-start}
 .bento .ph.photo-contractor h3{margin:0;max-width:20ch;text-wrap:balance}
-/* Рівень затемнення герой-банера для ПК задається тільки в правилі вище. */
-/* Кнопка навігації відображається лише на планшетах і телефонах. */
+
 .menu-toggle{display:none;align-items:center;justify-content:center;width:46px;height:44px;padding:0;margin:0 0 0 auto;border:1px solid rgba(255,255,255,.35);border-radius:12px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;flex:none}
 .menu-toggle svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}
 .menu-toggle .icon-close{display:none}
@@ -267,7 +258,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   header nav#site-nav{display:none;position:absolute;top:calc(100% - 1px);left:20px;right:20px;max-width:none;z-index:20;overflow:visible;flex:none;flex-direction:column;gap:4px;padding:10px;background:#43301F;border:1px solid rgba(255,255,255,.23);border-radius:0 0 18px 18px;box-shadow:0 18px 30px rgba(27,16,8,.27)}
   header nav#site-nav.open{display:flex}
   header nav#site-nav a{display:block;padding:11px 14px;border-radius:10px;font-size:1rem;white-space:normal}
-  /* ГОЛОВНИЙ БАНЕР — затемнення для телефонів і планшетів. */
+
   .hero{background-image:linear-gradient(90deg,
     rgba(25,21,16,0.75) 0%,
     rgba(25,21,16,0.40) 50%,
@@ -275,7 +266,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   ),var(--img-hero)}
 }
 
-/* Заголовок герой-банера на мобільних */
 @media (max-width: 540px) {
   .hero h1 {
     font-size: clamp(2.15rem, 9vw, 2.7rem);
@@ -297,7 +287,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   }
 }
 
-/* Преміальна стилізація логотипа */
 .logo {
   gap: 12px;
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -320,7 +309,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   flex-shrink: 0;
 }
 
-/* Мобільний логотип */
 @media (max-width: 860px) {
   header .logo {
     font-size: 1.65rem;
@@ -334,9 +322,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   }
 }
   
-  
 
-/* Повноекранний перегляд галереї */
 .gallery-photo{cursor:zoom-in}
 .gallery-photo:focus-visible{outline:3px solid var(--honeyD);outline-offset:4px}
 .gallery-lightbox{position:fixed;inset:0;z-index:1000;background:rgba(12,10,8,.94);display:none;align-items:center;justify-content:center;padding:56px 64px 72px}
@@ -351,12 +337,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 body.lightbox-open{overflow:hidden}
 @media(max-width:540px){.gallery-lightbox{padding:65px 12px 78px}.gallery-lightbox .lb-prev{left:8px}.gallery-lightbox .lb-next{right:8px}.gallery-lightbox .lb-prev,.gallery-lightbox .lb-next{top:auto;bottom:14px;transform:none}.gallery-lightbox .lb-caption{bottom:27px;left:60px;right:60px}}
 
-/* Логотип у шапці та футері */
 .logo img{width:46px;height:46px;display:block;object-fit:contain;flex-shrink:0}
 @media(max-width:860px){header .logo img{width:42px;height:42px}}
 
 
-/* Оновлення портфоліо: бейдж Demo, преміальні стани і опис проєкту */
 :root{--chocolate:#352417;--chocolate-deep:#2A1B12;--graphite:#2B2118}
 body{color:var(--graphite)}
 header .wrap{align-items:center}
