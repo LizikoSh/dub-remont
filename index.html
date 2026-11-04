@@ -120,7 +120,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
 @media(max-width:540px){.bento,.tiles,.gal,.types{grid-template-columns:1fr}.gal .w{grid-column:auto}.hero .cap{display:none}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
-/* ЗОБРАЖЕННЯ САЙТУ: */
 :root{
   --img-hero:url("./images/hero.webp");
   --img-contractor:url("./images/contractor.webp");
@@ -130,7 +129,6 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:24px 60px;justify-content:space-bet
   --img-manager:url("./images/manager.webp");
   --img-dream-home:url("./images/dream-home.webp");
 }
-/* ГОЛОВНИЙ БАНЕР — затемнення для ПК.*/
 
 .hero {
   background-image: linear-gradient(
@@ -536,7 +534,6 @@ document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a
 window.scrollTo(0,0)}
 window.addEventListener("hashchange",show);show();
 
-/* Мобільне бургер-меню: закриття після вибору, ззовні, Escape і при збільшенні екрана. */
 var menuButton=document.getElementById("menu-toggle");
 var menu=document.getElementById("site-nav");
 function closeMenu(){menu.classList.remove("open");menuButton.setAttribute("aria-expanded","false");menuButton.setAttribute("aria-label","Відкрити меню")}
@@ -559,7 +556,6 @@ return d?'<div>'+t+'<p>'+s[1]+'</p></div>':t}).join("")});
 var G=[["Кухня-вітальня","g2"],["Ванна кімната","g1"],["Спальня","g3"],["Коридор","g4"],["Дитяча","g2"],["Будинок, перший поверх","g1"],["Сходи з дуба","g4"],["Кабінет","g3"],["Балкон","g1"],["Їдальня","g2"]];
 document.getElementById("gal").innerHTML=G.map(function(g,i){return '<div role="button" tabindex="0" aria-label="Відкрити фото: '+g[0]+'" data-gallery-index="'+i+'" class="ph tile photo-new gallery-photo gallery-'+(i+1)+' '+g[1]+(i%5==0?' w':'')+'"><span class="cap" style="position:absolute;left:14px;bottom:14px">'+g[0]+'</span></div>'}).join("");
 
-/* Галерея: оригінальні файли, навігація та закриття */
 var lightbox=document.getElementById("gallery-lightbox");
 var lightboxImage=document.getElementById("lightbox-image");
 var lightboxCaption=document.getElementById("lightbox-caption");
